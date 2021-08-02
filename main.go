@@ -42,6 +42,7 @@ func main() {
 		}
 
 	})
+	r.Static("/assets", "./assets")
 	r.Run(":" + *port)
 
 }
