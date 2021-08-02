@@ -34,7 +34,7 @@ func main() {
 			c.Data(http.StatusOK, "text/plain; charset=utf-8", []byte("\n\r"+outputString))
 
 		} else {
-			c.HTML(http.StatusOK, "index.tmpl", gin.H{
+			c.HTML(http.StatusOK, "index.html", gin.H{
 				"data": reqResponse,
 				"url":  *url,
 			})
