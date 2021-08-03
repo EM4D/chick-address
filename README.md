@@ -9,3 +9,8 @@ The **[ip-api.com]("https://ip-api.com")** website API is currently in use
 ```
 ./chick-address -port=8080 -url="yourdomain.com"
 ```
+
+## Assets
+To use the assets first, create a directory (if not exists) at the root of the project called assets, then put the files you need in it.
+
+**Your assets are available at example.com/assets/**
