@@ -9,6 +9,7 @@ import (
 
 type Response struct {
 	IP       string `json:"Query"`
+	Status   string
 	Country  string
 	City     string
 	As       string
