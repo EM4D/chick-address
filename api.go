@@ -8,27 +8,20 @@ import (
 )
 
 type Response struct {
-	IP          string `json:"Query"`
-	Status      string
-	Country     string
-	CountryCode string
-	Region      string
-	RegionName  string
-	City        string
-	Timezone    string
-	Isp         string
-	Org         string
-	As          string
-	Asname      string
-	Proxy       bool
+	IP       string `json:"Query"`
+	Status   string
+	Country  string
+	City     string
+	As       string
+	Timezone string
 }
 
 func get_from_api(ip string) Response {
 
-	url := "http://ip-api.com/json/" + ip + "?fields=status,message,country,countryCode,region,regionName,city,timezone,isp,org,as,asname,proxy,query"
+	url := "http://ip-api.com/json/" + ip + "?fields=message,country,city,as,timezone,query"
 
 	spaceClient := http.Client{
-		Timeout: time.Second * 20, // Timeout after 2 seconds
+		Timeout: time.Second * 3, // Timeout after 3 seconds
 	}
 
 	req, reqErr := http.NewRequest(http.MethodGet, url, nil)

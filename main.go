@@ -16,7 +16,7 @@ func main() {
 	flag.Parse()
 
 	r := gin.Default()
-	r.LoadHTMLGlob("templates/*")
+	r.LoadHTMLGlob("web-interface/*")
 	r.GET("/", func(c *gin.Context) {
 		reqResponse := get_from_api(c.ClientIP())
 		if strings.Contains(c.GetHeader("User-Agent"), "curl") {
@@ -30,7 +30,7 @@ func main() {
 				}
 
 			}
-
+			outputString += "\n\033[93mSponsored with LOVE by Pardis Co.\n\rwww.Pardisco.co\n\rSpecial Thanks to Twitter@EmadMahmoudpour \033[37m" + "\n\r"
 			c.Data(http.StatusOK, "text/plain; charset=utf-8", []byte("\n\r"+outputString))
 
 		} else {
