@@ -30,7 +30,7 @@ func main() {
 				}
 
 			}
-			outputString += "\n\033[93mSponsored with LOVE by Pardis Co.\n\rwww.Pardisco.co\n\rSpecial Thanks to Twitter@EmadMahmoudpour \033[37m" + "\n\r"
+			outputString += "\n\033[93mSponsored with \033[0;31mLOVE\033[93m by Pardis Co.\n\rwww.Pardisco.co\n\rSpecial Thanks to Twitter@EmadMahmoudpour \033[37m" + "\n\r"
 			c.Data(http.StatusOK, "text/plain; charset=utf-8", []byte("\n\r"+outputString))
 
 		} else {
