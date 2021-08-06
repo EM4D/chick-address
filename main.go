@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	port := flag.String("port", "8080", "The address to listen on for HTTP requests.")
+	port := flag.String("port", "8888", "The address to listen on for HTTP requests.")
 	url := flag.String("url", "localhost", "The service URL ")
 	flag.Parse()
 
