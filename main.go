@@ -11,12 +11,12 @@ import (
 )
 
 func main() {
-	port := flag.String("port", "8080", "The address to listen on for HTTP requests.")
+	port := flag.String("port", "8888", "The address to listen on for HTTP requests.")
 	url := flag.String("url", "localhost", "The service URL ")
 	flag.Parse()
 
 	r := gin.Default()
-	r.LoadHTMLGlob("templates/*")
+	r.LoadHTMLGlob("web-interface/*")
 	r.GET("/", func(c *gin.Context) {
 		reqResponse := get_from_api(c.ClientIP())
 		if strings.Contains(c.GetHeader("User-Agent"), "curl") {
@@ -30,11 +30,11 @@ func main() {
 				}
 
 			}
-
+			outputString += "\n\033[93mSponsored with \033[0;31mLOVE\033[93m by Pardis Co.\n\rwww.Pardisco.co\n\rSpecial Thanks to Twitter@EmadMahmoudpour \033[37m" + "\n\r"
 			c.Data(http.StatusOK, "text/plain; charset=utf-8", []byte("\n\r"+outputString))
 
 		} else {
-			c.HTML(http.StatusOK, "index.tmpl", gin.H{
+			c.HTML(http.StatusOK, "index.html", gin.H{
 				"data": reqResponse,
 				"url":  *url,
 			})
