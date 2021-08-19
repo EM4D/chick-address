@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	port = flag.String("port", "9999", "The address to listen on for HTTP requests.")
+	port = flag.String("port", "8888", "The address to listen on for HTTP requests.")
 	url  = flag.String("url", "localhost", "The service URL ")
 )
 
