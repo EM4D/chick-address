@@ -47,7 +47,7 @@ func getAll(c *gin.Context) {
 			}
 
 		}
-		outputString += "\n\r" + "\033[37mDo you need IP in a single line? use: $curl myadd.ir/ip" + "\n\r" + "\033[37mDo you need AS Number in a single line? use: $curl myadd.ir/asn" + "\n\r" + "\n\033[93mSponsored with \033[0;31mLOVE\033[93m by Pardis Co.\n\rwww.Pardisco.co\n\rSpecial Thanks to Twitter@EmadMahmoudpour \033[37m" + "\n\r"
+		outputString += "\n\r" + "\033[96mDo you need IP in a single line? use: \033[92m$curl myadd.ir/ip" + "\n\r" + "\033[37mDo you need AS Number in a single line? use: $curl myadd.ir/asn" + "\n\r" + "\n\033[93mSponsored with \033[0;31mLOVE\033[93m by Pardis Co.\n\rwww.Pardisco.co\n\rSpecial Thanks to Twitter@EmadMahmoudpour \033[37m" + "\n\r"
 		c.Data(http.StatusOK, "text/plain; charset=utf-8", []byte("\n\r"+outputString))
 
 	} else {
